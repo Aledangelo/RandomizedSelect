@@ -22,7 +22,7 @@ int main() {
 
     int i;
     int A[N];
-    cout<<"VETTORE A:                       ";
+    cout<<"Array A:                       ";
     for(i = 1; i <= N; i++){
         A[i] = rand() % 100;
         cout<<A[i]<<"|";
@@ -30,13 +30,13 @@ int main() {
     cout<<endl;
 
     int stat = rand() % N;
-    cout<<"Cerca la statistica di ordine:   "<<stat<<endl;
+    cout<<"Look for the order statistic:   "<<stat<<endl;
 
     inizio = clock();
     int q = RandomizedSelect(A,1,N,stat);
     fine = clock();
 
-    cout<<"STATISTICA CORRETTA:             "<<q<<endl;
+    cout<<"SRIGHT STATISTICS:             "<<q<<endl;
 
     tempo = ((double)(fine-inizio))/CLOCKS_PER_SEC;
     cout<<"T(n):                            "<<tempo<<endl;
