@@ -15,10 +15,10 @@ int main() {
     clock_t inizio,fine;
     double tempo;
 
-    N = 10;
+    // N = 10;
     srand(time(NULL));
 
-    //N = 1 + rand() % 100;
+    N = 1 + rand() % 100;
 
     int i;
     int A[N];
@@ -47,14 +47,14 @@ int main() {
 
 
 int RandomizedSelect(int *A, int p, int r, int i){
-    if(p == r){         //qua avevamo scritto if(p = r) invece di if(p == r) ed entrava sempre nel for
-        return A[p];    //quindi restituiva sempre l'elemento alla posizione p
+    if(p == r){
+        return A[p];
     }
 
 
-    int q = RandomizedPartition(A,p,r); //indice del pivot scelto
+    int q = RandomizedPartition(A,p,r);
 
-    int k = q - p + 1;  //ricalcoliamo l'indice del pivot
+    int k = q - p + 1;
 
     if(k == i){
         return A[q];
@@ -68,9 +68,7 @@ int RandomizedSelect(int *A, int p, int r, int i){
 
 int Partition(int *A, int p, int r){
     int pivot = A[r];
-    //indice i di terminazione elementi <= pivot
     int i = p-1;
-    //indice j = elemento da confrontare
 
     int j;
 
@@ -81,13 +79,13 @@ int Partition(int *A, int p, int r){
         }
     }
 
-    swap(A,i+1,r); //scambio il pivot con il primo elemento più grande
+    swap(A,i+1,r);
     return i+1;
 }
 
 int RandomizedPartition(int *A, int p, int r){
     int q;
-    int dif = r-p+1; //qua avevamo fatto r-p, ma è r-p+1 (immagina un vettore che parte da due e va a 6 e fatti i conti)
+    int dif = r-p+1;
     int pivot = p + rand() % dif;
     swap(A,pivot,r);
     q = Partition(A,p,r);
