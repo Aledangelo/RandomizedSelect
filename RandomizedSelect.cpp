@@ -36,7 +36,7 @@ int main() {
     int q = RandomizedSelect(A,1,N,stat);
     fine = clock();
 
-    cout<<"SRIGHT STATISTICS:             "<<q<<endl;
+    cout<<"RIGHT STATISTICS:             "<<q<<endl;
 
     tempo = ((double)(fine-inizio))/CLOCKS_PER_SEC;
     cout<<"T(n):                            "<<tempo<<endl;
